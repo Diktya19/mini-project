@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Edit Data Sekolah Konoha</h1>
+    <form th:action="@{~/sekolah/update}" method="post">
+      <label>Id</label><br>
+      <input type="text" name="id" id="id" th:value="${sekolah.id}"><br/>
+
+      <label>Kode</label><br>
+      <input type="text" name="kode" id="kode" th:value="${sekolah.kode}"><br/>
+
+      <label>Nama</label><br>
+      <input type="text" name="nama" id="nama" th:value="${sekolah.nama}"><br/>
+
+      <label>Alamat</label><br/>
+      <input type="text" name="alamat" id="alamat" th:value="${sekolah.alamat}"><br/>
+
+      <label>Akreditasi</label><br/>
+      <input type="text" name="akreditasi" id="akreditasi" th:value="${sekolah.akreditasi}"><br/>
+
+      <label>Jurusan</label><br>
+      <input type="text" name="jurusan" id="jurusan" th:value="${sekolah.jurusan}"><br/>
+
+      <label>Organisasi</label><br>
+      <input type="text" name="organisasi" id="organisasi" th:value="${sekolah.organisasi}"><br/>
+
+      <label>Jumlah Guru</label><br>
+      <input type="text" name="jmlGuru" id="jmlGuru" th:value="${sekolah.jmlGuru}"><br/>
+
+      <label>Jumlah Opt TU</label><br>
+      <input type="text" name="jmlOptTu" id="jmlOptTu" th:value="${sekolah.jmlOptTu}"><br/>
+
+      <label>Jumlah Opt Satpam</label><br>
+      <input type="text" name="jmlOptSatpam" id="jmlOptSatpam" th:value="${sekolah.jmlOptSatpam}"><br/>
+
+      <label>Jumlah Murid X</label><br>
+      <input type="text" name="jmlMuridX" id="jmlMuridX" th:value="${sekolah.jmlMuridX}"><br/>
+
+      <label>Jumlah Murid XI</label><br>
+      <input type="text" name="jmlMuridXI" id="jmlMuridXI" th:value="${sekolah.jmlMuridXI}"><br/>
+
+      <label>Jumlah Murid XII</label><br>
+      <input type="text" name="jmlMuridXII" id="jmlMuridXII" th:value="${sekolah.jmlMuridXII}"><br/>
+
+      <label>Total Murid</label><br>
+      <input type="text" name="totalMurid" id="totalMurid" th:value="${sekolah.totalMurid}"><br/>
+
+      <label>Total Bangunan</label><br>
+      <input type="text" name="totalBangunan" id="totalBangunan" th:value="${sekolah.totalBangunan}"><br/>
+
+      <button type="submit">SIMPAN</button>
+    </form>
+</body>
+</html>

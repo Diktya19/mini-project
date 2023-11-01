@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Data Jaya Paint</title>
+</head>
+<body>
+    <h1>Add Data Toko</h1>
+    <form th:action="@{~/toko/save}" method="post">
+      <label>Id</label><br>
+      <input type="text" name="id" id="id"><br/>
+
+      <label>Kode Toko</label><br>
+      <input type="text" name="kodeToko" id="kodeToko"><br/>
+
+      <label>Nama Operator</label><br>
+      <input type="text" name="namaOpt" id="namaOpt"><br/>
+
+      <label>Alamat</label><br>
+      <input type="text" name="alamat" id="alamat"><br/>
+
+      <label>Stock Envi</label><br>
+      <input type="text" name="stockEnvi" id="stockEnvi"><br/>
+
+      <label>Stock Nippon</label><br>
+      <input type="text" name="stockNippon" id="stockNippon"><br/>
+
+      <label>Stock Dulux</label><br>
+      <input type="text" name="stockDulux" id="stockDulux"><br/>
+
+      <label>Target Value</label><br>
+      <input type="text" name="targetValue" id="targetValue"><br/>
+
+      <button type="submit">Simpan</button>
+    </form>
+</body>
+</html>

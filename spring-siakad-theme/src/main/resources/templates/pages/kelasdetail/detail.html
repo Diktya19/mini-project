@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Kelas Detail</title>
+</head>
+<body>
+<div class="row mb-2" layout:decorate="breadcrumb">
+    <div class="col-sm-6">
+        <h1 class="m-0 font-weight-bolder">KELAS DETAIL</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Detail Kelas</li>
+        </ol>
+    </div>
+</div>
+<div class="row" layout:fragment="content">
+    <!-- left column -->
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <!-- general form elements -->
+        <div class="card card-indigo">
+            <div class="card-header">
+                <h3 class="card-title font-weight-light">Detail Data Kelas Detail</h3>
+            </div>
+
+            <!-- card header -->
+            <form th:action="@{~/kelasdetail/save}" method="post">
+                <!-- card form start -->
+                <!-- id hidden -->
+                <input type="hidden" name="id" th:value="${kelasDetailList.id}">
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Kelas</label>
+                        <input class="form-control" type="text" name="kelas.code" th:value="|${kelasDetailList.kelas.code} - ${kelasDetailList.kelas.matakuliahName}|">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mahasiswa</label>
+                        <input type="text" class="form-control" name="mahasiswa.name" th:value="|${kelasDetailList.mahasiswa.name} - ${kelasDetailList.mahasiswa.jurusanName}|">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Status</label>
+                        <input type="text" class="form-control" name="status" th:value="${kelasDetailList.status}">
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a class="btn btn-outline-primary" th:href="@{~/kelasdetail}">back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

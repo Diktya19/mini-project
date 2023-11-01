@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Motor Index</h1>
+    <p>Selamat Datang di Index Motor</p>
+    <p th:href="${datajudul}">Judul</p>
+    <a th:href="@{~/motor/add}">Tambahkan Disini</a>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Kode</th>
+                <th>Name</th>
+                <th>Merk</th>
+                <th>PlatNomor</th>
+                <th>BahanBakar</th>
+                <th>Cc</th>
+                <th>Warna</th>
+                <th>Harga</th>
+                <th>Stock</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="motor:${listMotor}">
+                    <td th:text="${motor.id}"></td>
+                    <td th:text="${motor.kode}"></td>
+                    <td th:text="${motor.name}"></td>
+                    <td th:text="${motor.merk}"></td>
+                    <td th:text="${motor.platNomor}"></td>
+                    <td th:text="${motor.bahanBakar}"></td>
+                    <td th:text="${motor.cc}"></td>
+                    <td th:text="${motor.warna}"></td>
+                    <td>Rp. <strong th:text="${motor.harga}"></strong></td>
+                    <td><strong th:text="${motor.stock}"></strong>pcs</td>
+
+                    <td>
+                        <a th:href="@{~/motor/edit/{id}(id=${motor.id})}">Ubah</a>
+                        <a th:href="@{~/motor/delete/{id}(id=${motor.id})}">Delete</a>
+                        <a th:href="@{~/motor/detail/{id}(id=${motor.id})}">Detail</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">Jumlah Data</td>
+                    <td><strong th:text="${jumlahData}"></strong>Item</td>
+                </tr>
+            </tbody>
+        </table>
+</body>
+</html>

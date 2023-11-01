@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Laptop Index</h1>
+    <p>Welcome to Laptop Index</p>
+    <p th:text="${dataJudul}">Judul</p>
+    <a th:href="@{~/laptop/add}">Tambahkan Disini</a>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Kode</th>
+              <th>Name</th>
+              <th>Ram</th>
+              <th>Processor</th>
+              <th>Storage</th>
+              <th>Os</th>
+              <th>Layar</th>
+              <th>Dimensi</th>
+              <th>Warna</th>
+              <th>Rilis</th>
+              <th>Harga</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr th:each="laptop:${listLaptop}">
+                <td th:text="${laptop.id}"></td>
+                <td th:text="${laptop.kode}"></td>
+                <td th:text="${laptop.name}"></td>
+                <td th:text="${laptop.ram}"></td>
+                <td th:text="${laptop.processor}"></td>
+                <td th:text="${laptop.storage}"></td>
+                <td th:text="${laptop.os}"></td>
+                <td th:text="${laptop.layar}"></td>
+                <td th:text="${laptop.dimensi}"></td>
+                <td th:text="${laptop.warna}"></td>
+                <td th:text="${laptop.rilis}"></td>
+                <td>Rp. <strong th:text="${laptop.harga}"></strong> </td>
+                <td><strong th:text="${laptop.stock}"></strong>pcs</td>
+
+                <td>
+                  <a th:href="@{~/laptop/edit/{id}(id=${laptop.id})}">Ubah</a>
+                  <a th:href="@{~/laptop/delete/{id}(id=${laptop.id})}">Hapus</a>
+                  <a th:href="@{~/laptop/detail/{id}(id=${laptop.id})}">Detail</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="6">Jumlah Data</td>
+                <td><strong th:text="${jumlahData}"></strong>Item</td>
+            </tr>
+          </tbody>
+        </table>
+</body>
+</html>

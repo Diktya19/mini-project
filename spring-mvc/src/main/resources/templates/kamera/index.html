@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>KAMERA INDEX</h1>
+    <p>Wilujeng Sumping Di KAMERA INDEX</p>
+    <p th:text="${dataJudul}">Judul</p>
+
+    <a th:href="@{/kamera/add}">Tambihkeun Didieu</a>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Kode</td>
+                    <td>Name</td>
+                    <td>Merk</td>
+                    <td>Tipe</td>
+                    <td>Sensor</td>
+                    <td>Harga</td>
+                    <td>Fitur</td>
+                    <td>Lensa</td>
+                    <td>Aksesoris</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="kamera:${listKamera}">
+                    <td th:text="${kamera.id}"></td>
+                    <td th:text="${kamera.kode}"></td>
+                    <td th:text="${kamera.name}"></td>
+                    <td th:text="${kamera.merk}"></td>
+                    <td th:text="${kamera.tipe}"></td>
+                    <td th:text="${kamera.sensor}"></td>
+                    <td>Rp. <strong th:text="${kamera.harga}"></strong></td>
+                    <td th:text="${kamera.fitur}"></td>
+                    <td th:text="${kamera.lensa}"></td>
+                    <td th:text="${kamera.aksesoris}"></td>
+
+                    <td>
+                        <a th:href="@{~/kamera/edit/{id}(id=${kamera.id})}">Robih</a>
+                        <a th:href="@{~/kamera/delete/{id}(id=${kamera.id})}">Pupus</a>
+                        <a th:href="@{~/kamera/detail/{id}(id=${kamera.id})}">Jelasna</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="9">jumlah Data</td>
+                    <td><strong th:text="${jumlahData}"></strong>Siki</td>
+                </tr>
+            </tbody>
+        </table>
+</body>
+</html>

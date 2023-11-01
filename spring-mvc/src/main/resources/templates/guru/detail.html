@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Detail Data Guru</h1>
+    <form th:action="@{~/guru/save}" method="post">
+        <label>ID</label><br>
+        <input type="text" name="id" id="id" th:value="${guru.id}"><br/>
+
+        <label>Nama</label><br>
+        <input type="text" name="nama" id="nama" th:value="${guru.nama}"><br/>
+
+        <label>Tempat Tanggal Lahir</label><br>
+        <input type="text" name="ttl" id="ttl" th:value="${guru.ttl}"><br/>
+
+        <label>Jenis Kelamin</label><br>
+        <input type="text" name="jk" id="jk" th:value="${guru.jk}"><br/>
+
+        <label>Agama</label><br>
+        <input type="text" name="agama" id="agama" th:value="${guru.agama}"><br/>
+
+        <label>Tinggi Badan</label><br>
+        <input type="text" name="tb" id="tb" th:value="${guru.tb}"><br/>
+
+        <label>Berat Badan</label><br>
+        <input type="text" name="bb" id="bb" th:value="${guru.bb}"><br/>
+
+        <label>Bangsa</label><br>
+        <input type="text" name="bangsa" id="bangsa" th:value="${guru.bangsa}"><br/>
+
+        <label>Alamat</label><br>
+        <textarea type="text" name="alamat" id="alamat" th:text="${guru.alamat}"></textarea><br/>
+
+        <label>No Handphone</label><br>
+        <input type="text" name="noHp" id="noHp" th:value="${guru.noHp}"><br/>
+
+        <label>Status</label><br>
+        <input type="text" name="status" id="status" th:value="${guru.status}"><br/>
+
+        <label>E-Mail</label><br>
+        <input type="text" name="eMail" id="eMail" th:value="${guru.eMail}"><br/>
+
+        <label>Pendidikan</label><br>
+        <textarea type="text" name="pendidikan" id="pendidikan" th:text="${guru.pendidikan}"></textarea><br/>
+
+        <label>Skill</label><br>
+        <textarea type="text" name="skill" id="skill" th:text="${guru.skill}"></textarea><br/>
+
+        <label>Pengalaman Organisasi</label><br>
+        <textarea type="text" name="expOrganisasi" id="expOrganisasi" th:text="${guru.expOrganisasi}"></textarea><br/>
+
+        <label>Pengalaman Kerja</label><br>
+        <textarea type="text" name="expKerja" id="expKerja" th:text="${guru.expKerja}"></textarea><br/>
+    </form>
+</body>
+</html>

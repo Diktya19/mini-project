@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>DOSEN - INDEX</title>
+</head>
+<body>
+<div class="row mb-2" layout:fragment="breadcrumb">
+    <div class="col-sm-6">
+        <h1 class="m-0 font-weight-normal">Dosen</h1>
+    </div><!-- /.col -->
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dosen</li>
+        </ol>
+    </div>
+    <!-- /. col -->
+</div>
+<!-- /. row -->
+
+<div class="row" layout:fragment="content">
+    <div class="col-sm-12 col-md-12 col-sm-12">
+        <!-- card mulai -->
+        <div class="card">
+            <!-- header -->
+            <div class="card-header bg-gradient-indigo">
+                <h3 class="card-title">Dosen</h3>
+
+                <!-- header tools -->
+                <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 200px">
+                        <input type="text" name="table_search" class="form-control float-right btn-outline-dark" placeholder="Search">
+
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-outline-dark">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <a th:href="@{~/dosen/add}" id="btn-add" class="btn btn-outline-dark">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- tools end -->
+            </div>
+            <!-- header end -->
+
+            <div class="card-body">
+                <table id="table-data" class="table">
+                    <thead>
+                    <tr>
+                        <th>NIP</th>
+                        <th>NAME</th>
+                        <th>JENIS KELAMIN</th>
+                        <th>ALAMAT</th>
+                        <th>GELAR</th>
+                        <th>ACTION</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="dosen: ${dataList}">
+                        <td class="font-weight-bold" th:text="${dosen.nip}"></td>
+                        <td class="font-weight-bold" th:text="${dosen.name}"></td>
+                        <td class="font-weight-bold" th:text="${dosen.jk}"></td>
+                        <td class="font-weight-bold" th:text="${dosen.alamat}"></td>
+                        <td class="font-weight-bold" th:text="${dosen.gelar}"></td>
+
+                        <td>
+                            <a th:href="@{~/dosen/detail/{id}(id=${dosen.id})}"
+                            class="btn btn-xs btn-outline-success btn-detail">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a th:href="@{~/dosen/edit/{id}(id=${dosen.id})}"
+                            class="btn btn-xs btn-outline-warning btn-edit">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a th:href="@{~/dosen/delete/{id}(id=${dosen.id})}"
+                            class="btn btn-xs btn-outline-danger">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-bold" colspan="7">Jumlah Data</td>
+                        <td class="font-weight-bold"><strong th:text="${jumlahData}"></strong>item</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Nambah Data Kamera</h1>
+    <form th:action="@{~/kamera/save}" method="post">
+      <label>ID</label><br>
+      <input type="text" name="id" id="id"><br/>
+
+      <label>Kode</label><br>
+      <input type="text" name="kode" id="kode"><br/>
+
+      <label>Name</label><br>
+      <input type="text" name="name" id="name"><br/>
+
+      <label>Merk</label><br>
+      <input type="text" name="merk" id="merk"><br/>
+
+      <label>Tipe</label><br>
+      <input type="text" name="tipe" id="tipe"><br/>
+
+      <label>Sensor</label><br>
+      <input type="text" name="sensor" id="sensor"><br/>
+
+      <label>Harga</label><br>
+      <input type="text" name="harga" id="harga"><br/>
+
+      <label>Fitur</label><br>
+      <input type="text" name="fitur" id="fitur"><br/>
+
+      <label>Lensa</label><br>
+      <input type="text" name="lensa" id="lensa"><br/>
+
+      <label>Aksesoris</label><br>
+      <input type="text" name="aksesoris" id="aksesoris"><br/>
+
+      <button type="submit">SIMPEN</button>
+    </form>
+</body>
+</html>

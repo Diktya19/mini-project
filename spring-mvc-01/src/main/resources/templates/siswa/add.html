@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>ADD Data Siswa</h1>
+    <form th:action="@{~/siswa/save}" method="post">
+      <label>Id</label><br>
+      <input type="text" name="id" id="id"><br/>
+      <label>Kode</label><br>
+      <input type="text" name="kode" id="kode"><br/>
+      <label>Nama</label><br>
+      <input type="text" name="nama" id="nama"><br/>
+      <label>Nama Panggilan</label><br>
+      <input type="text" name="namaPanggilan" id="namaPanggilan"><br/>
+      <label>Nama Ortu</label><br>
+      <input type="text" name="namaOrtu" id="namaOrtu"><br/>
+      <label>Alamat</label><br>
+      <input type="text" name="alamat" id="alamat"><br/>
+      <label>Umur</label><br>
+      <input type="text" name="umur" id="umur"><br/>
+      <label>Tinggi Badan</label><br>
+      <input type="text" name="tb" id="tb"><br/>
+      <label>Berat Badan</label><br>
+      <input type="text" name="bb" id="bb"><br/>
+      <label>Asal Sekolah</label><br>
+      <input type="text" name="asalSekolah" id="asalSekolah"><br/>
+      <label>Jalur Masuk</label><br>
+      <input type="text" name="jalurMasuk" id="jalurMasuk"><br/>
+
+      <button type="submit">Simpan</button>
+    </form>
+</body>
+</html>

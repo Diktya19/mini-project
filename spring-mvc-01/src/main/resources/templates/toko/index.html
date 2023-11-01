@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Toko Jaya Paint</title>
+</head>
+<body>
+    <h1>TOKO INDEX</h1>
+    <p>Selamat Datang Di Data Toko</p>
+    <p th:text="${dataJudul}">Judul</p>
+
+    <a th:href="@{/toko/add}">Add</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Kode Toko</th>
+                <th>Nama Operator</th>
+                <th>Alamat</th>
+                <th>Stock Envi</th>
+                <th>Stock Nippon</th>
+                <th>Stock Dulux</th>
+                <th>Tareget Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="toko:${listToko}">
+                <td th:text="${toko.id}"></td>
+                <td th:text="${toko.kodeToko}"></td>
+                <td th:text="${toko.namaOpt}"></td>
+                <td th:text="${toko.alamat}"></td>
+                <td><strong th:text="${toko.stockEnvi}"></strong>pcs</td>
+                <td><strong th:text="${toko.stockNippon}"></strong>pcs</td>
+                <td><strong th:text="${toko.stockDulux}"></strong>pcs</td>
+                <td><strong th:text="${toko.targetValue}"></strong>juta</td>
+
+                <td>
+                    <a th:href="@{~/toko/edit/{id}(id=${toko.id})}">Edit</a>
+                    <a th:href="@{~/toko/delete/{id}(id=${toko.id})}">Delete</a>
+                    <a th:href="@{~/toko/detail/{id}(id=${toko.id})}">Detail</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">Jumlah Data</td>
+                <td><strong th:text="${jumlahData}">Item</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

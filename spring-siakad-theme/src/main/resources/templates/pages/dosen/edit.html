@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>Dosen - Titel</title>
+</head>
+<body>
+<div class="row mb-2" layout:fragment="breadcrumb">
+    <div class="col-sm-6">
+        <h1 class="m-0">Edit Dosen</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dosen</li>
+        </ol>
+    </div>
+</div>
+<div class="row" layout:fragment="content">
+    <!-- left coulmn -->
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <!-- general elements -->
+        <div class="card card-indigo">
+            <div class="card-header">
+                <h3 class="card-title">Edit Dosen</h3>
+            </div>
+            <!-- card-header -->
+            <form th:action="@{~/dosen/update}" method="post">
+                <!-- /. id hidden -->
+                <input type="hidden" name="id" th:value="${dosen.id}">
+                <!-- card body start -->
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>NIP</label>
+                        <input type="text" class="form-control" name="nip" id="nip" th:value="${dosen.nip}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>NAME</label>
+                        <input type="text" class="form-control" name="name" id="name" th:value="${dosen.name}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Jenis Kelamin</label>
+                        <input type="text" class="form-control" name="jk" id="jk" th:value="${dosen.jk}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>ALAMAT</label>
+                        <input type="text" class="form-control" name="alamat" id="alamat" th:value="${dosen.alamat}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>GELAR</label>
+                        <input type="text" class="form-control" name="gelar" id="gelar" th:value="${dosen.gelar}">
+                    </div>
+                </div>
+                    <!-- /. card body end -->
+
+                    <!-- card footer -->
+                    <div class="card-footer">
+                        <button class="btn btn-outline-primary" type="submit">Update</button>
+                        <a class="btn btn-outline-primary" th:href="@{~/dosen}">Back</a>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

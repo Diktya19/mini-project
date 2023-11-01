@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>Buku - Index</title>
+</head>
+<body>
+<div class="row mb-2" layout:fragment="breadcrumb">
+    <div class="col-sm-6">
+        <h1 class="m-0">Index Buku</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Buku</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row" layout:fragment="content">
+    <div class="col-log-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <h3 class="card-title">Buku</h3>
+
+                <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 200px">
+                        <input type="text" name="table-search" class="form-control" placeholder="Search">
+
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <a th:href="@{~/buku/add}" id="btn-add" class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- membuat table -->
+            <div class="card-body">
+            <table id="table-data" class="table">
+                <!-- table header -->
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Kode</th>
+                    <th>Judul</th>
+                    <th>Pengarang</th>
+                    <th>TahunTerbit</th>
+                    <th>JumlahHalaman</th>
+                    <th>Penerbit</th>
+                    <th>Harga</th>
+                    <th>Stock</th>
+                    <th>Bahasa</th>
+                    <th>Deskripsi</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="buku:${listBuku}">
+                    <td th:text="${buku.id}"></td>
+                    <td th:text="${buku.kode}"></td>
+                    <td th:text="${buku.judul}"></td>
+                    <td th:text="${buku.pengarang}"></td>
+                    <td th:text="${buku.tahunTerbit}"></td>
+                    <td><strong th:text="${buku.jumlahHalaman}"></strong>halaman</td>
+                    <td th:text="${buku.penerbit}"></td>
+                    <td>Rp. <strong th:text="${buku.harga}"></strong></td>
+                    <td><strong th:text="${buku.stock}"></strong>pcs</td>
+                    <td th:text="${buku.bahasa}"></td>
+                    <td th:text="${buku.deskripsi}"></td>
+
+                    <td>
+                        <a th:href="@{~/buku/edit/{id}(id=${buku.id})}" class="btn btn-xs btn-warning btn-edit">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a th:href="@{~/buku/delete/{id}(id=${buku.id})}" class="btn btn-xs btn-danger btn-delete">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        <a th:href="@{~/buku/detail/{id}(id=${buku.id})}" class="btn btn-xs btn-success btn-detail">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </td>
+                </tr>
+                <!-- menampilkan jumlah data -->
+                <tr>
+                    <td colspan="9">Jumlah Data</td>
+                    <td><strong th:text="${jumlahData}"></strong>Item</td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

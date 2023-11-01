@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Detail Data Siswa</h1>
+    <form th:action="@{~/siswa/save}" method="post">
+      <label>Id</label><br>
+      <input type="text" name="id" id="id" th:value="${siswa.id}"><br/>
+      <label>Kode</label><br>
+      <input type="text" name="kode" id="kode" th:value="${siswa.kode}"><br/>
+      <label>Nama</label><br>
+      <input type="text" name="nama" id="nama" th:value="${siswa.nama}"><br/>
+      <label>Nama Panggilan</label><br>
+      <input type="text" name="namaPanggilan" id="namaPanggilan" th:value="${siswa.namaPanggilan}"><br/>
+      <label>Nama Ortu</label><br>
+      <input type="text" name="namaOrtu" id="namaOrtu" th:value="${siswa.namaOrtu}"><br/>
+      <label>Alamat</label><br>
+      <input type="text" name="alamat" id="alamat" th:value="${siswa.alamat}"><br/>
+      <label>Umur</label><br>
+      <input type="text" name="umur" id="umur" th:value="${siswa.umur}"><br/>
+      <label>Tinggi Badan</label><br>
+      <input type="text" name="tb" id="tb" th:value="${siswa.tb}"><br/>
+      <label>Berat Badan</label><br>
+      <input type="text" name="bb" id="bb" th:value="${siswa.bb}"><br/>
+      <label>Asal Sekolah</label><br>
+      <input type="text" name="asalSekolah" id="asalSekolah" th:value="${siswa.asalSekolah}"><br/>
+      <label>Jalur Masuk</label><br>
+      <input type="text" name="jalurMasuk" id="jalurMasuk" th:value="${siswa.jalurMasuk}"><br/>
+    </form>
+</body>
+</html>

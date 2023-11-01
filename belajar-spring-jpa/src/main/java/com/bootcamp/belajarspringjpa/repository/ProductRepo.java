@@ -1,0 +1,12 @@
+package com.bootcamp.belajarspringjpa.repository;
+
+import com.bootcamp.belajarspringjpa.entity.ProductEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+//STEP4
+//interface adalah kumpulan dari sebuah Metod
+public interface ProductRepo extends JpaRepository<ProductEntity, Integer> {
+}
+

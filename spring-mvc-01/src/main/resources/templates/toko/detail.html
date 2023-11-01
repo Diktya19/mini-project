@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Data Toko Jaya Paint</title>
+</head>
+<body>
+    <h1>Detail Data Toko Jaya Paint</h1>
+    <form th:action="@{~/toko/save}" method="post">
+      <label>Id</label><br>
+      <input type="text" name="id" id="id" th:value="${toko.id}"><br/>
+
+      <label>Kode Toko</label><br>
+      <input type="text" name="kodeToko" id="kodetoko" th:value="${toko.kodeToko}"><br/>
+
+      <label>Nama Operator</label><br>
+      <input type="text" name="namaOpt" id="namaOpt" th:value="${toko.namaOpt}"><br/>
+
+      <label>Alamat</label><br>
+      <input type="text" name="alamat" id="alamat" th:value="${toko.alamat}"><br/>
+
+      <label>Stock Envi</label><br>
+      <input type="text" name="stockEnvi" id="stockEnvi" th:value="${toko.stockEnvi}"><br/>
+
+      <label>Stock Nippon</label><br>
+      <input type="text" name="stockNippon" id="stockNippon" th:value="${toko.stockNippon}"><br/>
+
+      <label>Stock Dulux</label><br>
+      <input type="text" name="stockDulux" id="stockDulux" th:value="${toko.stockDulux}"><br/>
+
+      <label>Target Value</label><br>
+      <input type="text" name="tagetValue" id="targetValue" th:value="${toko.targetValue}"><br/>
+    </form>
+</body>
+</html>

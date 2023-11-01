@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelas-Titel</title>
+</head>
+<body>
+<div class="row mb-2" layout:fragment="breadcrumb">
+    <div class="col-sm-6">
+        <h1 class="m-0 font-weight-bolder">KELAS</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active font-weight-light">Kelas</li>
+        </ol>
+    </div>
+</div>
+<div class="row" layout:fragment="content">
+    <!-- left coulmn -->
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <!-- general form elements -->
+        <div class="card card-indigo">
+            <div class="card-header">
+                <h3 class="card-title font-weight-light">Edit Data Kelas</h3>
+            </div>
+            <!-- card-header -->
+            <form th:action="@{~/kelas/update}" method="post">
+                <!-- id hidden -->
+                <input type="hidden" name="id" th:value="${kelas.id}">
+                <!-- card form start -->
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="code">Code</label>
+                        <input type="text" class="form-control" name="code" id="code" th:value="${kelas.code}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" id="name" th:value="${kelas.name}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nameHari">Name Hari</label>
+                            <select class="form-control" name="nameHari" id="nameHari" th:value="${kelas.nameHari}">
+                                <option value="">select day</option>
+                                <option value="senin">senin</option>
+                                <option value="selasa">selasa</option>
+                                <option value="rabu">rabu</option>
+                                <option value="kamis">kamis</option>
+                                <option value="jumat">jumat</option>
+                                <option value="sabtu">sabtu</option>
+                                <option value="minggu">minggu</option>
+                            </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jamMulai">Jam Mulai</label>
+                        <input type="time" class="form-control" name="jamMulai" id="jamMulai" th:value="${kelas.jamMulai}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jamSelesai">Jam Selesai</label>
+                        <input type="time" class="form-control" name="jamSelesai" id="jamSelesai" th:value="${kelas.jamSelesai}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <input type="text" class="form-control" name="status" id="status" th:value="${kelas.status}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="semester">Semester</label>
+                        <input type="text" class="form-control" name="semester" id="semester" th:value="${kelas.semester}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tahunAjaran">Tahun Ajaran</label>
+                        <input type="text" class="form-control" name="tahunAjaran" id="tahunAjaran" th:value="${kelas.tahunAjaran}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kouta">Kuota</label>
+                        <input type="text" class="form-control" name="kuota" id="kouta" th:value="${kelas.kuota}">
+                    </div>
+
+                    <div class="form-group">
+                <label for="dosenId">Dosen</label>
+                <select class="form-control" name="dosenId" id="dosenId">
+                    <option value="">pilih dosen</option>
+                    <option th:each="dosen: ${dataDosen}"
+                            th:value="${dosen.id}"
+                            th:text="|${dosen.nip} - ${dosen.name}|"
+                            th:selected="${kelas.dosenId == dosen.id}"></option>
+                </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ruanganId">Ruangan</label>
+                        <select class="form-control" name="ruanganId" id="ruanganId">
+                            <option value="">pilih ruangan</option>
+                            <option th:each="ruangan: ${dataRuangan}"
+                                    th:value="${ruangan.id}"
+                                    th:text="|${ruangan.code} - ${ruangan.name}|"
+                                    th:selected="${kelas.ruanganId == ruangan.id}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="matakuliahId">Matakuliah</label>
+                        <select class="form-control" name="matakuliahId" id="matakuliahId">
+                            <option value="">pilih matakuliah</option>
+                            <option th:each="matakuliah: ${dataMatakuliah}"
+                                    th:value="${matakuliah.id}"
+                                    th:text="|${matakuliah.code} - ${matakuliah.name}|"
+                                    th:selected="${kelas.matakuliahId == matakuliah.id}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                <label for="bisaOnline">Bisa Online</label>
+                <input type="checkbox" name="bisaOnline" id="bisaOnline" value="true" th:value="${kelas.bisaOnline}">
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                <button class="btn btn-outline-primary" type="submit">Save</button>
+                <a class="btn btn-outline-primary" th:href="@{~/kelas}">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>DATA SEKOLAH KONOHA INDEX</h1>
+    <p>Selamat Datang di data Sekolah Konoha</p>
+    <p th:text="${dataJudul}">Judul</p>
+      <a th:href="@{~/sekolah/add}">Tambahkan Disini</a>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Kode</th>
+              <th>Nama</th>
+              <th>Alamat</th>
+              <th>Akreditasi</th>
+              <th>Jurusan</th>
+              <th>Orgnisasi</th>
+              <th>Jumlah Guru</th>
+              <th>Jumlah Opt Tu</th>
+              <th>Jumlah Satpam</th>
+              <th>Jumlah Murid X</th>
+              <th>Jumlah Murid XI</th>
+              <th>Jumlah Murid XII</th>
+              <th>Total Murid</th>
+              <th>Total Bangunan</th>
+            </tr>
+          </thead>
+
+            <tbody>
+              <tr th:each="sekolah:${listSekolah}">
+                <td th:text="${sekolah.id}"></td>
+                <td th:text="${sekolah.kode}"></td>
+                <td th:text="${sekolah.nama}"></td>
+                <td th:text="${sekolah.alamat}"></td>
+                <td th:text="${sekolah.akreditasi}"></td>
+                <td th:text="${sekolah.jurusan}"></td>
+                <td th:text="${sekolah.organisasi}"></td>
+                <td><strong th:text="${sekolah.jmlGuru}"></strong>orang</td>
+                <td><strong th:text="${sekolah.jmlOptTu}"></strong>orang</td>
+                <td><strong th:text="${sekolah.jmlOptSatpam}"></strong>orang</td>
+                <td><strong th:text="${sekolah.jmlMuridX}"></strong>orang</td>
+                <td><strong th:text="${sekolah.jmlMuridXI}"></strong>orang</td>
+                <td><strong th:text="${sekolah.jmlMuridXII}"></strong>orang</td>
+                <td><strong th:text="${sekolah.totalMurid}"></strong>orang</td>
+                <td><strong th:text="${sekolah.totalBangunan}"></strong>ruangan</strong></td>
+
+                <td>
+                  <a th:href="@{~/sekolah/edit/{id}(id=${sekolah.id})}">EDIT</a>
+                  <a th:href="@{~/sekolah/delete/{id}(id=${sekolah.id})}">DELETE</a>
+                  <a th:href="@{~/sekolah/detail/{id}(id=${sekolah.id})}">DETAIL</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="15">Jumlah Data</td>
+                <td><strong th:text="${jumlahData}"></strong>Item</td>
+              </tr>
+            </tbody>
+        </table>
+</body>
+</html>

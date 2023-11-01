@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Ngarobih Data Kamera</h1>
+    <form th:action="@{~/kamera/update}" method="post">
+        <label>Id</label><br>
+        <input type="text" name="id" id="id" th:value="${kamera.id}"><br/>
+
+        <label>Kode</label><br>
+        <input type="text" name="kode" id="kode" th:value="${kamera.kode}"><br/>
+
+        <label>Name</label><br>
+        <input type="text" name="name" id="name" th:value="${kamera.name}"><br/>
+
+        <label>Merk</label><br>
+        <input type="text" name="merk" id="merk" th:value="${kamera.merk}"><br/>
+
+        <label>Tipe</label><br>
+        <input type="text" name="tipe" id="tipe" th:value="${kamera.tipe}"><br/>
+
+        <label>Sensor</label><br>
+        <input type="text" name="sensor" id="sensor" th:value="${kamera.sensor}"><br/>
+
+        <label>Harga</label><br>
+        <input type="text" name="harga" id="harga" th:value="${kamera.harga}"><br/>
+
+        <label>Fitur</label><br>
+        <input type="text" name="fitur" id="fitur" th:value="${kamera.fitur}"><br/>
+
+        <label>Lensa</label><br>
+        <input type="text" name="lensa" id="lensa" th:value="${kamera.lensa}"><br/>
+
+        <label>Aksesoris</label><br/>
+        <input type="text" name="aksesoris" id="aksesoris" th:value="${kamera.aksesoris}"><br/>
+
+        <button type="submit">ROBIH</button>
+    </form>
+</body>
+</html>

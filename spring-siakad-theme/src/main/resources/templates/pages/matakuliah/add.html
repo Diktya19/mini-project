@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>Matakuliah-Titel</title>
+</head>
+<body>
+<!-- header -->
+<div class="row mb-2" layout:fragment="breadcrumb">
+    <div class="col-sm-6">
+        <h1 class="m-0 font-weight-normal">Add Matakuliah</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Matakuliah</li>
+        </ol>
+    </div>
+</div>
+<!-- header end -->
+
+<!-- card -->
+<div class="row" layout:fragment="content">
+    <!-- left column -->
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <!-- general form elements -->
+        <!-- card header -->
+        <div class="card card-indigo">
+            <div class="card-header">
+                <h3 class="card-title">Add Matakuliah</h3>
+            </div>
+
+            <form th:action="@{~/matakuliah/save}" method="post">
+                <!-- card form start -->
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Code</label>
+                        <input type="text" class="form-control" name="code" id="code" placeholder="entry code">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="entry name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>SKS</label><br>
+                        <input type="text" class="form-control" name="sks" id="sks" placeholder="entry sks">
+                    </div>
+                </div>
+                <!-- card form end -->
+
+                <!-- card footer -->
+                <div class="card-footer">
+                    <button class="btn btn-outline-primary" type="submit">Save</button>
+                    <a class="btn btn-outline-primary" th:href="@{~/matakuliah}">Back</a>
+                </div>
+            </form>
+        </div>
+        <!-- card header end -->
+    </div>
+</div>
+<!-- card -->
+</body>
+</html>

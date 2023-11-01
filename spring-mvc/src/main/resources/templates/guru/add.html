@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>ADD DATA GURU</h1>
+    <form th:action="@{~/guru/save}" method="post">
+      <label>Id</label><br>
+      <input type="text" name="id" id="id"><br/>
+
+      <label>Nama</label><br>
+      <input type="text" name="nama" id="nama"><br/>
+
+      <label>Tempat Tanggal Lahir</label><br>
+      <input type="text" name="ttl" id="ttl" cols="15"><br/>
+
+      <label>Jenis Kelamin</label><br>
+      <input type="text" name="jk" id="jk"><br/>
+
+      <label>Agama</label><br>
+      <input type="text" name="agama" id="agama"><br/>
+
+      <label>Tinggi Badan</label><br>
+      <input type="text" name="tb" id="tb"><br/>
+
+      <label>Berat Badan</label><br>
+      <input type="text" name="bb" id="bb"><br/>
+
+      <label>Bangsa</label><br>
+      <input type="text" name="bangsa" id="bangsa"><br/>
+
+      <label>Alamat</label><br>
+      <textarea type="text" name="alamat" id="alamat" rows="5" cols="30"></textarea><br/>
+
+      <label>No Handphone</label><br>
+      <input type="text" name="noHp" id="noHp"><br/>
+
+      <label>Status</label><br>
+      <input type="text" name="status" id="status"><br/>
+
+      <label>E-Mail</label><br>
+      <input type="text" name="eMail" id="eMail"><br/>
+
+      <label>Pendidikan</label><br>
+      <textarea type="text" name="pendidikan" id="pendidikan" rows="5" cols="30"></textarea><br/>
+
+      <label>Skill</label><br>
+      <textarea type="text" name="skill" id="skill" rows="5" cols="30"></textarea><br/>
+
+      <label>Pengalaman Organisasi</label><br>
+      <textarea type="text" name="expOrganisasi" id="expOrganisasi" rows="5" cols="30"></textarea><br>
+
+      <label>Pengalaman Kerja</label><br>
+      <textarea type="text" name="expKerja" id="expKerja" rows="5" cols="30"></textarea><br/>
+
+      <button type="submit">SIMPAN</button>
+
+    </form>
+</body>
+</html>

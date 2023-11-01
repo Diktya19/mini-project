@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>TAMBAHKAN DATA SEKOLAH</h1>
+    <form th:action="@{~/sekolah/save}" method="post">
+      <label>Id</label><br>
+      <input type="text" name="id" id="id"><br/>
+
+      <label>Kode</label><br>
+      <input type="text" name="kode" id="kode"><br/>
+
+      <label>Nama</label><br>
+      <input type="text" name="nama" id="nama"><br/>
+
+      <label>Alamat</label><br>
+      <input type="text" name="alamat" id="alamat"><br/>
+
+      <label>Akreditasi</label><br>
+      <input type="text" name="akreditasi" id="akreditasi"><br/>
+
+      <label>Jurusan</label><br>
+      <input type="text" name="jurusan" id="jurusan"><br/>
+
+      <label>Organisasi</label><br>
+      <input type="text" name="organisasi" id="organisasi"><br/>
+
+      <label>Jumlah Guru</label><br>
+      <input type="text" name="jmlGuru" id="jmlGuru"><br/>
+
+      <label>Jumlah Operator TU</label><br>
+      <input type="text" name="jmlOptTu" id="jmlOptTu"><br/>
+
+      <label>Jumlah Operator Satpam</label><br>
+      <input type="text" name="jmlOptSatpam" id="jmlOptSatpam"><br/>
+
+      <label>Jumlah Murid X</label><br>
+      <input type="text" name="jmlMuridX"><br/>
+
+      <label>Jumlah Murid XI</label><br>
+      <input type="text" name="jmlMuridXI"><br/>
+
+      <label>Jumlah Murid XII</label><br>
+      <input type="text" name="jmlMuridXII" id="jmlMuridXII"><br/>
+
+      <label>Total Murid</label><br>
+      <input type="text" name="totalMurid" id="totalMurid"><br/>
+
+      <label>Total Bangunan</label><br>
+      <input type="text" name="totalBangunan" id="totalBangunan"><br/>
+
+      <button type="submit">SIMPAN</button>
+    </form>
+</body>
+</html>

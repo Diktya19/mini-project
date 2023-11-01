@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>GURU INDEX</h1>
+    <p SELAMAT DATANG DI GURU INDEX></p>
+    <p th:text="${dataJudul}">Judul</p>
+
+    <a th:href="@{~/guru/add}">Tambahkan Disini</a>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nama</th>
+            <th>Tempat Tanggal Lahir</th>
+            <th>Jenis Kelamin</th>
+            <th>Agama</th>
+            <th>Tinggi Badan</th>
+            <th>Berat Badan</th>
+            <th>Bangsa</th>
+            <th>Alamat</th>
+            <th>No Handphone</th>
+            <th>Status</th>
+            <th>E-Mail</th>
+            <th>Pendidikan</th>
+            <th>Skill</th>
+            <th>Pengalaman Organisasi</th>
+            <th>Pengalaman Kerja</th>
+          </tr>
+        </thead>
+
+          <tbody>
+            <tr th:each="guru:${listGuru}">
+              <td th:text="${guru.id}"></td>
+              <td th:text="${guru.nama}"></td>
+              <td th:text="${guru.ttl}"></td>
+              <td th:text="${guru.jk}"></td>
+              <td th:text="${guru.agama}"></td>
+              <td><strong th:text="${guru.tb}"></strong>Cm</td>
+              <td><strong th:text="${guru.bb}"></strong>Kg</td>
+              <td th:text="${guru.bangsa}"></td>
+              <td th:text="${guru.alamat}"></td>
+              <td th:text="${guru.noHp}"></td>
+              <td th:text="${guru.status}"></td>
+              <td th:text="${guru.eMail}"></td>
+              <td th:text="${guru.pendidikan}"></td>
+              <td th:text="${guru.skill}"></td>
+              <td th:text="${guru.expOrganisasi}"></td>
+              <td th:text="${guru.expKerja}"></td>
+
+              <td>
+                <a th:href="@{~/guru/edit/{id}(id=${guru.id})}">EDIT</a>
+                <a th:href="@{~/guru/delete/{id}(id=${guru.id})}">HAPUS</a>
+                <a th:href="@{~/guru/detail/{id}(id=${guru.id})}">DETAIL</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="15">Jumlah Data</td>
+              <td><strong th:text="${jumlahData}"></strong>Item</td>
+            </tr>
+          </tbody>
+      </table>
+</body>
+</html>
